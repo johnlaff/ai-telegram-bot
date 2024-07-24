@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: Telegram Artificial Intelligence Bot
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        model: gpt-4o-mini
+    retry:
+      max-attempts: 2
+      backoff:
+        period: 1000 # 1 segundo
+
+telegram:
+  bot:
+    token: ${TELEGRAM_BOT_TOKEN}
+    username: ${TELEGRAM_BOT_USERNAME}
+    allowed-user-id: ${TELEGRAM_ALLOWED_USER_ID}
+logging:
+  level:
+    root: INFO
+    br.com.johnlaff.telegram: DEBUG
+  file:
+    name: logs/app.log
